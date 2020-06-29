@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="AllTests" verbose="1">
+
+	<test name="LogInCorrect">
+
+		<parameter name="username" value="mathias.nops@gmail.com" />
+		<parameter name="password" value="Password12345" />
+		<parameter name="expectedMessage"
+			value="Your username is invalid!" />
+
+		<classes>
+			<class name="com.gymwolf.LoginTest">
+				<methods>
+					<include name="LogInCorrect"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LogInWrong">
+
+		<parameter name="username" value="mathias.nops@gmail.com" />
+		<parameter name="password" value="Password" />
+		<parameter name="expectedMessage"
+			value="Your username is invalid!" />
+
+		<classes>
+			<class name="com.gymwolf.LoginTest">
+				<methods>
+					<include name="LogInWrong"></include>
+				</methods>
+			</class>
+		</classes>
+
+	</test>
+
+</suite>
